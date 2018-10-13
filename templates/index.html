@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+<body>
+  <header>
+    <h1>Tax Calculator</h1>
+  </header>
+  <div class=table-wrapper>
+    <span class='note-table'> 
+
+      note: for actions link please click action button in redirected tab Django
+      Rest API Framework (example: after click Manage button please click 
+      PUT, PATCH, or DELETE button in redirected tab)
+    </span>
+    <span class='title'> Product Table </span>
+    <table>
+      <thead>
+        <tr>
+          <th> ID </th>
+          <th> Name </th>
+          <th> Tax Code </th>
+          <th> Price </th>
+          <th class='actions'> Actions Button API </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for entry in products %}
+        <tr>
+          <td> {{ entry.id }} </td>
+          <td> {{ entry.name }} </td>
+          <td> {{ entry.tax_code }} </td>
+          <td> {{ entry.price }}</td>
+          <td class='actions'>
+            <a class='link' target="_newtab" href="{% url 'product:api:detail' entry.id %}">Manage</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class='api'>
+    <div class='news'>
+      <span class='title'> Product </span>
+      <div class='links'>
+        <div class='api-link'>
+          <span> for UPDATE DELETE Product API is available in table above, please click actions buttons in table above </span>
+        </div>
+        <div class='api-link'>
+          <span> for get bill API click link below </span>
+          <span> example body data: {"name": "create new", "tax_code": "1", "price": 10000} </span>
+          <a class='list' target="_newtab" href="{% url 'product:api:bill' %}">Bill Product API</a>
+        </div>
+        <div class='api-link'>
+          <span> for create product API click link below </span>
+          <span> example body data: {"name": "create new", "tax_code": "1", "price": 10000} </span>
+          <a class='list' target="_newtab" href="{% url 'product:api:list' %}">create Product API</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer> 
+  </footer>
+</body>

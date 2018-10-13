@@ -1,0 +1,35 @@
+[
+{
+    "model": "product.product",
+    "pk": 1,
+    "fields": {
+        "name": "Marlboro",
+        "tax_code": "2",
+        "price": 20000,
+        "created": "2018-10-13T17:36:08.217Z",
+        "modified": "2018-10-13T17:36:08.217Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 2,
+    "fields": {
+        "name": "Beef Burger",
+        "tax_code": "1",
+        "price": 40000,
+        "created": "2018-10-13T17:36:30.290Z",
+        "modified": "2018-10-13T17:37:57.933Z"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 3,
+    "fields": {
+        "name": "Forrest Gump",
+        "tax_code": "3",
+        "price": 10000,
+        "created": "2018-10-13T17:37:44.438Z",
+        "modified": "2018-10-13T17:37:44.438Z"
+    }
+}
+]
