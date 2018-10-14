@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 
-from .views import landing
+from .views import landing, doc
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing),
+    path('doc/', doc),
     url(r'^product/', include(('apps.product.urls', 'product'), namespace='product')),
 ]
