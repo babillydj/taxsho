@@ -9,7 +9,7 @@ class Product(models.Model):
     )
 
     name = models.CharField(max_length=100)
-    tax_code = models.CharField(max_length=20, choices=TAX_CODE, default='draft')
+    tax_code = models.CharField(max_length=20, choices=TAX_CODE, default='1')
     price = models.PositiveIntegerField(default=0)
     
     created = models.DateTimeField(auto_now_add=True)
