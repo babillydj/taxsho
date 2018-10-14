@@ -33,3 +33,6 @@ Unit test for API
 ```
 python manage.py test
 ```
+
+### API Documentation
+open https://www.localhost:8000/doc after all above process

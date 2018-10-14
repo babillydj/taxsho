@@ -13,7 +13,7 @@ paths:
     get:
       description: |
         Returns all products with bill detail.
-      operationId: allProducts
+      operationId: product_list
       responses:
         '200':
           description: bill response
