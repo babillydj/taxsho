@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('tax_code', models.CharField(choices=[('1', 'food'), ('2', 'tobacco'), ('3', 'entertainment')], default='draft', max_length=20)),
+                ('tax_code', models.CharField(choices=[('1', 'food'), ('2', 'tobacco'), ('3', 'entertainment')], default='1', max_length=20)),
                 ('price', models.PositiveIntegerField(default=0)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('modified', models.DateTimeField(auto_now=True)),
