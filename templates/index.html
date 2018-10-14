@@ -7,7 +7,6 @@
   </header>
   <div class=table-wrapper>
     <span class='note-table'> 
-
       note: for actions link please click action button in redirected tab Django
       Rest API Framework (example: after click Manage button please click 
       PUT, PATCH, or DELETE button in redirected tab)
@@ -37,6 +36,41 @@
       {% endfor %}
       </tbody>
     </table>
+    <span class='note-table'> 
+      click this <a class='list' target="_newtab" href="{% url 'product:api:bill' %}">link</a> 
+      to User Bill API
+    </span>
+    <span class='title'> User Bill Table </span>
+    <table>
+      <thead>
+        <tr>
+          <th> Name </th>
+          <th> Tax Code </th>
+          <th> Type </th>
+          <th> Refundable </th>
+          <th> Price </th>
+          <th> Tax </th>
+          <th> Amount </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for entry in products %}
+        <tr>
+          <td> {{ entry.name }} </td>
+          <td> {{ entry.tax_code }} </td>
+          <td> {{ entry.type }} </td>
+          {% if entry.refund %}
+            <td> Yes </td>
+          {% else %}
+            <td> No </td>
+          {% endif %}
+          <td> {{ entry.price }}</td>
+          <td> {{ entry.tax }} </td>
+          <td> {{ entry.amount }} </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
   </div>
   <div class='api'>
     <div class='news'>
@@ -47,7 +81,6 @@
         </div>
         <div class='api-link'>
           <span> for get bill API click link below </span>
-          <span> example body data: {"name": "create new", "tax_code": "1", "price": 10000} </span>
           <a class='list' target="_newtab" href="{% url 'product:api:bill' %}">Bill Product API</a>
         </div>
         <div class='api-link'>

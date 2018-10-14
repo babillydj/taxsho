@@ -4,13 +4,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 
 from .models import Product
-
-
-# serializers
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Product
-        fields = ('id', 'name', 'tax_code', 'price')
+from .serializers import ProductSerializer
 
 
 # views API
